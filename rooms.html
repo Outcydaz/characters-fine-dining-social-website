@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no">
+
+<title>Characters Fine Dining</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+<script src="js/jquery.carouFredSel-5.6.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {
+
+		$('#carousel').carouFredSel({
+			responsive: false,
+			circular: false,
+			auto: false,
+			items: {
+				visible: 1,
+				width: 960,
+				height: '100%'
+			},
+			scroll: {
+				fx: 'directscroll'
+			}
+		});
+
+		$('#thumbs').carouFredSel({
+			responsive: false,
+			auto: false,
+			prev: '#prev',
+			next: '#next',
+			items: {
+				visible: {
+					min: 1,
+					max: 3
+				},
+				width: 262,
+				height: '100%'
+			}
+		});
+
+		$('#thumbs a').click(function() {
+			$('#carousel').trigger('slideTo', '#'+this.href.split('#').pop());
+			$('#thumbs a').removeClass('selected');
+			$(this).addClass('selected');
+			return false;
+		});
+
+	});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35620673-1']);
+  _gaq.push(['_setDomainName', 'characters.ca']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Browser Detect -->
+<script type="text/javascript">
+if (screen.width <= 499) {
+	if (document.referrer.indexOf('http://characters.ca/mobile/') == -1){
+	document.location = "http://characters.ca/mobile/";
+	}
+}
+</script>
+<!-- #Browser Detect -->
+</head>
+
+<body>
+<div id="header">
+	<div class="top limit">
+        <div class="info-top">
+            <p class="reservations-top"><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" target="_blank">reserve your table</a></p>
+            <p class="telephone-top"><a href="tel:7804214100">780.421.4100</a></p>           
+        </div><!-- end of info-top -->
+    </div><!-- end of top -->
+    
+	<div class="menu-container limit">    	
+    	<div class="logo"> <a href="index.html"><img src="images/characters-logo.png" width="237" height="112" alt="Character's Fine Dining" /></a> </div><!-- end of logo -->
+        
+    	<ul class="menu-left">
+        	<li><a href="index.html">Home</a></li>
+            <li><a href="menus.html">The Menus</a></li>
+            <li><a href="bar.html">The Bar</a></li>
+        </ul>
+        <ul class="menu-right">
+        	<li><a href="rooms.html">Rooms</a></li>
+            <li><a href="gallery.html">The Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div><!-- end of globalnav -->
+</div><!-- end of top -->
+
+<div id="slides-container">
+	<div class="slides limit">
+    	<div id="carousel-wrapper">
+				<div id="carousel">
+					<span id="one"><img src="images/rooms/chefs-table.jpg" />
+                    	<div class="room-desc">
+                        	<h2>Chef's Table</h2>
+                        	<p>This unique dining experience is perfect for aspiring chefs, the epicurious and those looking for a little entertainment with their meal. The Chef’s Table places you and three guests right in the heart of the action. Chef Shonn and his staff welcome you to their busy kitchen and will answer your questions along the way.</p>
+                        </div>
+                    </span>
+                    
+					<span id="two"><img src="images/rooms/elevator.jpg" />
+                    	<div class="room-desc">
+                        	<h2>Elevator Shaft</h2>
+                            <p>Perfect for an intimate birthday or anniversary celebration, or perhaps a marriage proposal, this semi-private dining room seats up to four guests. Located off the main dining area, this quiet table is set in a converted elevator shaft.</p>
+                        </div>
+                    </span>
+                    
+					<span id="three"><img src="images/rooms/room-1.jpg" />
+                    	<div class="room-desc">
+                        	<h2>Room One</h2>
+                            	<p>You’ll find this stylishly appointed private room is ideal for all your needs. With seating for up to 20 – it’s perfect for business or pleasure.</p>
+                                <p>Room One is equipped with a projector screen and is internet ready. Projector may be available upon request.</p>
+                        </div>
+                    </span>
+                    
+					<span id="four"><img src="images/rooms/room-2.jpg" />
+                    	<div class="room-desc">
+                        	<h2>Room Two</h2>
+                            	<p>Characters largest private dining room, ideal for weddings, anniversaries, presentations or corporate affairs, this room features two fireplaces. This comfortable, spacious room can accommodate boardroom seating for up to 30 guests and will hold up to 50 guests when set with round tables. Room two can host stand-up receptions for up to 80 guests. Room two is Internet ready &amp; equipped with a built in LCD projector and drop down screen-ideal for presentations.</p>
+                        </div>
+                    </span>
+					<span id="five"><img src="images/rooms/room-3.jpg" />
+                    	<div class="room-desc">
+                        	<h2>Room Three</h2>
+                            	<p>Perfect for any event, this warm, friendly private room seats up to 14 guests.</p>
+                        </div>	
+                    </span>
+                    
+					<span id="six"><img src="images/rooms/room-4.jpg" />
+                    	<div class="room-desc">
+                        	<h2>Room Four</h2>
+                            	<p>Enjoy everything from a working lunch to a special night out in this well-appointed private room. The round table seats up to 12 guests.</p>
+                        </div>
+                    </span>
+				</div><!-- carousel -->
+			</div><!-- #carousel wrapper -->
+    </div><!-- end of slides -->
+</div><!-- end of slide-container -->
+
+<div id="mid-container">
+    	<div class="mid-box limit">
+            <div id="thumbs-wrapper">
+                    <div id="thumbs">
+                        <a href="#one" class="selected"><img src="images/rooms/chefs-tablet.png" /></a>
+                        <a href="#two"><img src="images/rooms/elevatort.png" /></a>
+                        <a href="#three"><img src="images/rooms/room-1t.png" /></a>
+                        <a href="#four"><img src="images/rooms/room-2t.png" /></a>
+                        <a href="#five"><img src="images/rooms/room-3t.png" /></a>
+                        <a href="#six"><img src="images/rooms/room-4t.png" /></a>
+                    </div>
+                    <a id="prev" href="#"></a>
+                    <a id="next" href="#"></a>
+            </div><!-- end of thumbs-wrapper -->
+         </div><!-- mid-box -->
+</div><!-- end of mid-container -->
+
+<div id="footer-container">
+	<div class="footer limit">
+    
+		<div class="footer-left">
+            <ul class="footer-left-nav">
+                <li><a href="index.html">Home</a></li>
+            	<li><a href="menus.html">The Menus</a></li>
+            	<li><a href="bar.html">The Bar</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+            	<li><a href="gallery.html">The Gallery</a></li>
+            	<li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+          	<div class="social-copyright">    
+                <ul class="social">
+                    <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" target="_blank"><img src="images/facebook.png" width="42" height="42" alt="Characters: Facebook" /></a></li>
+                </ul>
+                
+              	<div class="copyright">
+                	<p>&copy; 2012 Copyright. Characters Fine Dining Restaurant. <br/>10257 105 Street Edmonton, Alberta T5J 1E3. Phone: <a href="tel:7804214100">780.421.4100</a>
+</p>
+            	</div><!-- end of copyright -->
+            </div><!-- end social copyright -->
+        </div><!-- end of footer-left -->   
+        
+        <div class="footer-right"> <a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" target="_blank"><img src="images/opentable-bw.png" width="245" height="125" alt="Character's Fine Dining: Reservations" /></a></div><!-- end of footer-right -->
+        
+	</div><!-- end of footer -->
+</div><!-- end of footer-container -->
+
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-34582391-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript';
+ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+
+</body>
+</html>

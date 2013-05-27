@@ -1,0 +1,235 @@
+a:active {
+    outline:none;
+}
+
+:focus {
+    -moz-outline-style:none;
+}
+
+img {
+    border:0;
+}
+
+#barscroll {
+    position:relative;
+    height:;
+    overflow:hidden;
+    border:0px solid #ddd;
+    width:960px;
+    padding:0;
+    height:500px;
+}
+
+#tools {
+    width:9999em;
+    position:absolute;
+    height:900px;
+}
+
+.tool {
+    float:left;
+    width:960px;
+    height:340px;
+    text-align:center;
+}
+
+/*.details {
+    font-size:18px;
+    color:#555;
+    margin-top:-20px;
+    background-color:transparent;
+    padding:5px 148px;
+}*/
+
+.details {
+	top: 90px;
+	background-color: transparent;
+	padding: 5px 65px;
+	position: absolute;
+	display:block;
+	width:450px;
+	text-align:center;
+	color:#fff;
+	text-shadow: 0px 0px 2px #000;
+}
+
+
+.details-alt {
+	top: -430px;
+	background-color: transparent;
+	padding: 5px 35px;
+	position: relative;
+	width:450px;
+	text-align:center;
+	color:#fff;
+	text-shadow: 0px 0px 2px #000;
+	float:right;
+}
+
+.details-alt p {
+	font-size:14px;
+	line-height:23px;
+}
+
+.details-alt h2{
+	color: #FFF;
+	margin-bottom:15px;
+}
+
+
+.details p {
+	font-size:14px;
+	line-height:23px;
+}
+
+.details h2 {
+	line-height:60px;
+	color:#fff;
+}
+
+p.hilite {
+	font-size:18px;
+	line-height:26px;
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+	font-style:italic;
+	color:#d5b99f;
+	padding-top:20px;
+	text-shadow: 0px 0px 2px #000;
+	font-weight:bold;
+}
+
+.drinklist {
+	width:214px;
+	height:108px;
+	top:-76px;
+	position:relative;
+	background:url(../images/list-bg.png) no-repeat;
+	padding-top:30px;
+	color:#fff;
+	text-shadow: 0px 0px 2px #000;
+	font-weight:bold;
+	margin-left:185px;
+}
+
+.winelist {
+	width:214px;
+	height:108px;
+	top:-76px;
+	left:400px;
+	position:relative;
+	background:url(../images/list-bg.png) no-repeat;
+	padding-top:30px;
+	color:#fff;
+	text-shadow: 0px 0px 2px #000;
+	font-weight:bold;
+	margin-left:185px;
+}
+
+.listopen-a {
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+	font-size:15px;
+	font-style:italic;
+	padding:0;
+	margin:0;
+	line-height:18px;
+	text-align:center;
+}
+
+.listopen-b {
+	font-size:12px;
+	text-transform:uppercase;
+	line-height:18px;
+	text-align:center;
+}
+
+/* WINELIST */
+.winelist .wopen-a {
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+	font-size:15px;
+	font-style:italic;
+	padding:0;
+	margin:0;
+	line-height:20px;
+	text-align:center;
+}
+
+.winelist .wopen-b {
+	font-size:12px;
+	text-transform:uppercase;
+	line-height:18px;
+	text-align:center;
+}
+/* #WINELIST */
+
+#barthumbs {
+    height:125px;
+    position:relative;
+    top:35px;
+    width:960px;
+    margin:0 auto;
+}
+
+.t {
+    padding:0 !important;
+    border:0 !important;
+}
+
+.t a {
+    /*margin-left:0px;*/
+    display:block;
+    /*width:125px;
+    float:left;
+    height:125px;
+    cursor:pointer;
+	background:pink;*/
+}
+
+.t a.active {
+    cursor:default !important;	
+}
+
+.navi {
+	width:515px;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+/*.wine {
+	background:url(../images/wine-icon.png) no-repeat;
+}
+
+.scotch {
+	background:url(../images/scotch-icon.png) no-repeat;
+}
+
+.spirits {
+	background:url(../images/spirits-icon.png) no-repeat;
+}*/
+
+
+.wine {
+}
+
+.scotch {
+}
+
+.spirits {
+}
+
+.barnav{
+    position:relative;
+    float:right;
+    width:150px;
+    margin:0px 5px;
+    height:150px;
+    cursor:pointer;
+    overflow:hidden;
+}
+
+.baritem{
+    left:2px;
+    top:2px;
+    position:absolute;
+    width:123px;
+    height:123px;
+}

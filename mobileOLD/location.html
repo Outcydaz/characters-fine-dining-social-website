@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Characters Fine Dining - Map</title>
+	<script>
+		function initialize() {
+			var myLatlng = new google.maps.LatLng( 53.54795752495189, -113.51314544677734 );
+			var myOptions = {
+				zoom: 12,
+				center: myLatlng,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map( document.getElementById( "map_canvas" ), myOptions );
+			
+			var marker = new google.maps.Marker({
+      		position: myLatlng,
+      		map: map,
+      		title:"Characters Fine Dining"
+			});
+		}
+	</script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<style>
+		html {
+			height: 100%;
+			overflow: hidden;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		#map_canvas { 
+			height: 100%;
+			width:278px !important;
+		}	
+	</style>
+</head>
+<body onload="initialize()">
+	<div id="map_canvas">
+	</div>
+</body>
+</html>

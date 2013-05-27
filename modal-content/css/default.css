@@ -1,0 +1,6 @@
+*/*Set's border, padding and margin to 0 for all values*/
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}

@@ -1,0 +1,1673 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Characters Fine Dining - The Menus</title> 
+	<link rel="stylesheet"  href="css/jquery.mobile-1.2.0.min.css" />  
+	<link rel="stylesheet" href="css/cfd-override.css"/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+    
+    <!--<script>
+	$(document).bind("mobileinit", function () {
+		$.mobile.ajaxEnabled = false;
+	});
+	</script> use this if all else fails to force url cache clear-->
+    
+<style>
+	#popupPanel-popup {
+	right: 0 !important;
+	left: auto !important;
+	}
+	#popupPanel {
+	width: 280px; /*100% creates a cool effect but we're not using it*/
+	border: 1px solid #000;
+	border-right: none;
+	background: rgba(0,0,0,.5);
+	margin: -1px 0;
+	}
+	#popupPanel .ui-btn {
+	margin: 2em 15px;
+	}
+</style>
+    
+    
+<!-- Fit menu overlay to 100% height -->
+<script>
+    $( "#popupPanel" ).on({
+popupbeforeposition: function() {
+    var h = $( window ).height();
+
+    $( "#popupPanel" ).css( "height", h );
+    }
+    });
+</script>
+
+</head> 
+<body> 
+
+	<div data-role="page" class="type-menus">
+		<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+    
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false" ><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false" rel="external">the gallery</a></li>
+        </ul>
+    </div>
+
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true" class="menuWrapper">
+			<li><a href="#lunch" data-rel="popup" data-position-to="window" data-transition="pop">
+				<img src="images/lunch-icon.png" alt="Lunch" >
+				<h2 class="mainHeader">lunch</h2>
+                </a>
+			</li>
+			<li><a href="#dinner" data-rel="popup" data-position-to="window" data-transition="pop">
+				<img src="images/dinner-icon.png" alt="Dinner" >
+				<h2 class="mainHeader">dinner</h2>
+                </a>
+			</li>
+			<li><a href="#seasonal" data-rel="popup" data-position-to="window" data-transition="pop">
+				<img src="images/seasonal-icon.png" alt="Seasonal" >
+				<h2 class="mainHeader">seasonal</h2>
+                </a>
+			</li>
+            <li><a href="#hors" data-rel="popup" data-position-to="window" data-transition="pop">
+				<img src="images/hors-icon.png" alt="H'ors D'oeuvres" >
+				<h2 class="mainHeader pullup">h'ors d'oeuvres</h2>
+                </a>
+			</li>
+            <li><a href="#special" data-rel="popup" data-position-to="window" data-transition="pop">
+				<img src="images/special-icon.png" alt="Special Events" >
+				<h2 class="mainHeader pullup">special events</h2>
+                </a>
+			</li>
+		</ul>
+        
+        <!-- LUNCH MENU -->		
+		<div data-role="popup" id="lunch" data-theme="d" data-overlay-theme="a" class="ui-content navi-popup" style="max-width:340px;" >
+        	<p class="menu-pop-descr">Lunch Menus</p>
+			<ul data-role="listview" data-inset="true" class="menuWrapper">
+			<li><a href="#lunch-app">
+				<h2 class="altHeader">appetizers</h2>
+                </a>
+			</li>
+			<li><a href="#lunch-main">
+				<h2 class="altHeader">main course</h2>
+                </a>
+			</li>
+			<li><a href="#lunch-dess">
+				<h2 class="altHeader">desserts</h2>
+                </a>
+			</li>
+            </ul>
+		</div><!-- #LUNCH MENU -->
+        
+        <!-- DINNER MENU -->		
+		<div data-role="popup" id="dinner" data-theme="d" data-overlay-theme="a" class="ui-content navi-popup" style="max-width:340px;">
+        	<p class="menu-pop-descr">Dinner Menus</p>
+			<ul data-role="listview" data-inset="true" class="menuWrapper">
+			<li><a href="#dinner-app">
+				<h2 class="altHeader">appetizers</h2>
+                </a>
+			</li>
+			<li><a href="#dinner-main">
+				<h2 class="altHeader">main course</h2>
+                </a>
+			</li>
+			<li><a href="#dinner-dess">
+				<h2 class="altHeader">desserts</h2>
+                </a>
+			</li>
+            </ul>
+		</div><!-- #DINNER MENU -->
+        
+        <!-- SEASONAL MENU -->		
+		<div data-role="popup" id="seasonal" data-theme="d" data-overlay-theme="a" class="ui-content navi-popup" style="max-width:340px;">
+        	<p class="menu-pop-descr">Seasonal Menus</p>
+			<ul data-role="listview" data-inset="true" class="menuWrapper">
+			<li><a href="#seasonal-lunch">
+				<h2 class="altHeader">lunch</h2>
+                </a>
+			</li>
+			<li><a href="#seasonal-dinner">
+				<h2 class="altHeader">dinner</h2>
+                </a>
+			</li>
+            </ul>
+		</div><!-- #SEASONAL MENU -->
+        
+        <!-- HORS MENU -->		
+		<div data-role="popup" id="hors" data-theme="d" data-overlay-theme="a" class="ui-content navi-popup" style="max-width:340px;">
+        	<p class="menu-pop-descr">h'ors d'oeuvres</p>
+			<ul data-role="listview" data-inset="true" class="menuWrapper">
+			<li><a href="#horsd">
+				<h2 class="altHeader">h'ors d'oeuvres</h2>
+                </a>
+			</li>
+            </ul>
+		</div><!-- #HORS MENU -->
+        
+        <!-- SPECIAL EVENTS MENU -->		
+		<div data-role="popup" id="special" data-theme="d" data-overlay-theme="a" class="ui-content navi-popup" style="max-width:340px;">
+        	<p class="menu-pop-descr">Special Events Menus</p>
+			<ul data-role="listview" data-inset="true" class="menuWrapper">
+			<li><a href="#lunch-winter">
+				<h2 class="altHeader">lunch</h2>
+                </a>
+			</li>
+			<li><a href="#dinner-winter">
+				<h2 class="altHeader">dinner</h2>
+                </a>
+			</li>
+            </ul>
+		</div><!-- #SPECIAL EVENTS MENU -->
+        
+	</div><!-- #content -->
+    
+    <div data-role="content" class="desktop">	
+		<p><a href="http://www.characters.ca" data-transition="slideup" target="_blank">View Full Site</a></p>		
+	</div>
+	
+    <div data-role="content" class="copyright">
+    	<p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+    
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+		<ul>
+			<li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom" >Map</a></li>
+			<li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+			<li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+			<li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+		</ul>
+		</div>
+        
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div><!-- #signup -->
+        
+		<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<iframe src="location.html" width="276" height="200"></iframe>
+            <h2>Location:</h2>
+            <p>10257 105 Street Edmonton, Alberta T5J 1E3</p>
+            <h2>Phone:</h2>
+            <p><a href="tel:7804214100">780.421.4100</a></p>
+		</div>        
+                
+	</div><!-- #footer -->
+
+
+        
+
+            
+	</div><!-- #page -->
+    
+    
+    <!-- LUNCH APPETIZERS -->
+    <div data-role="page" id="lunch-app" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false"><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+    
+    <div data-role="content">
+        <h1>Lunch Appetizers</h1>
+        <h2>BUTTER CHICKEN FLATBREAD</h2>
+		<p class="menu-detail">With arugula and a chili yoghurt</p> 
+        <p class="menu-price">Eight</p>
+        
+        <h2>NAVAJO SPICED CALAMARI</h2>
+        <p class="menu-detail">Served with a black bean aioli, cucumber & red onion</p>
+        <p class="menu-price">Eight</p>
+        
+        <h2>BEEF TARTAR</h2>
+        <p class="menu-detail">With grilled black bread and balsamic onions</p>
+        <p class="menu-price">Twelve</p>
+        
+        <h2>GRAPEFRUIT SALMON GRAVLAX</h2>
+        <p class="menu-detail">With crème fraiche and a cucumber sesame salad</p>
+        <p class="menu-price">Thirteen</p>
+        
+        <h2>BEEF SATAYS</h2>
+        <p class="menu-detail">Basted with squished grapes, green onion and soy</p>
+        <p class="menu-price">Nine</p>
+        
+        
+        <h1>SOUP</h1>
+        <h2>SALMON CHOWDER</h2>
+        <p class="menu-price">Eight</p>
+        
+        <h2>SWISS ONION</h2>
+        <p class="menu-price">Six</p>
+        
+        
+        <h1>SALADS</h1>
+        <h2>ASSORTED GREENS</h2>
+        <p class="menu-detail">Served with miso & wasabi dressing, tomatoes & avocado</p>
+        <p class="menu-price">Seven</p>
+        
+        <h2>ROMAINE</h2>
+        <p class="menu-detail">Tossed in a creamy garlic egg dressing, soft boiled egg and bacon</p>
+        <p class="menu-price">Nine</p>
+        
+        <h2>PORK BELLY AND BABY BEET</h2>
+        <p class="menu-detail">Served with roasted pear, walnuts and arugula</p>
+        <p class="menu-price">Eleven</p>
+        
+        <h2>FISH CAKES</h2>
+        <p class="menu-detail">With a roasted squash and heirloom spinach salad, pomegranate dressing</p>
+        <p class="menu-price">Nine</p>
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+    
+		<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<iframe src="location.html" width="276" height="200"></iframe>
+            <h2>Location:</h2>
+            <p>10257 105 Street Edmonton, Alberta T5J 1E3</p>
+            <h2>Phone:</h2>
+            <p><a href="tel:7804214100">780.421.4100</a></p>
+		</div>
+
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div>
+        
+    </div><!-- #LUNCH APPETIZERS -->
+    
+    
+    <!-- LUNCH MAIN COURSE -->
+    <div data-role="page" id="lunch-main" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false"><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+    
+    <div data-role="content">
+        <h1>Lunch Main Course</h1>
+        <h2>SEARED SALMON FILET WITH ROASTED SPICES</h2>
+		<p class="menu-detail">Served on couscous & braised spinach, asparagus & tomato butter sauce</p> 
+        <p class="menu-price">Eighteen</p>
+        
+        <h2>GRILLED CHICKEN</h2>
+        <p class="menu-detail">Baked with mozza, eggplant and tomatoes, with a spinach and tomato deep fried risotto ball</p>
+        <p class="menu-price">Twenty-one</p>
+        
+        <h2>BEEF FLANK STEAK</h2>
+        <p class="menu-detail">With potato cakes, baby beets, green beans and goat cheese</p>
+        <p class="menu-price">Seventeen</p>
+        
+        <h2>ZURICH STYLE SCHNITZEL AND ROSTI POTATOES</h2>
+        <p class="menu-detail">Thinly sliced pork with a mushroom cream sauce</p>
+        <p class="menu-price">Twenty</p>
+        
+        <h2>LAMB CHOPS</h2>
+        <p class="menu-detail">With spinach, leek and feta cannelloni</p>
+        <p class="menu-price">Eighteen</p>
+        
+        <h2>PAN SEARED HALIBUT</h2>
+        <p class="menu-detail">With a black bean hummus and falafel</p>
+        <p class="menu-price">Nineteen</p>
+
+        <h2>MISO GLAZED GIANT PRAWN</h2>
+        <p class="menu-detail">With black rice and ginger buerre blanc</p>
+        <p class="menu-price">Twenty-one</p>
+
+        <h2>SALTIMBOCCA PANINI</h2>
+        <p class="menu-detail">Veal with prosciutto and unripened mozza, with sage aioli</p>
+        <p class="menu-price">Seventeen</p>
+
+        <h2>WARM SPINACH SALAD</h2>
+        <p class="menu-detail">With artichoke, egg slices, pancetta, mushrooms & goat cheese</p>
+        <p class="menu-price">Seven</p>
+        <p class="menu-detail">Add grilled prawns or salmon</p>
+        <p class="menu-price">Fifteen</p>
+        
+        <h1>PASTA</h1>
+        <h2>HOUSE MADE WILD MUSHROOM TORTELLINI PRIMAVERA</h2>
+        <p class="menu-detail">Served in a light white wine cream sauce</p>
+        <p class="menu-price">Eighteen</p>
+        
+        <h2>SWISS ONION</h2>
+        <p class="menu-detail">With butternut squash gnocchi or tomato basil sauce</p>
+        <p class="menu-price">Sixteen</p>
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+   
+		<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<iframe src="location.html" width="276" height="200"></iframe>
+            <h2>Location:</h2>
+            <p>10257 105 Street Edmonton, Alberta T5J 1E3</p>
+            <h2>Phone:</h2>
+            <p><a href="tel:7804214100">780.421.4100</a></p>
+		</div>
+
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div>
+    
+    </div><!-- #LUNCH MAIN COURSE -->
+    
+    
+    <!-- LUNCH DESSERTS -->
+    <div data-role="page" id="lunch-dess" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false" ><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+    
+    <div data-role="content">
+        <h1>Lunch Desserts</h1>
+        <h2>BANANA CREAM PIE WITH CHARACTER</h2>
+		<p class="menu-detail">Banana cream layered with shortbread cookies Banana chips & caramel</p>
+        
+        <h2>CHOCOLATE CAKE</h2>
+        <p class="menu-detail">With pudding and dolce de Leche ice-cream</p>
+        
+        <h2>ARNOLD PALMER BRULEE</h2>
+        <p class="menu-detail">Earl Gray tea and fresh lemon</p>
+        
+        <h2>PEANUT BUTTER CHEESECAKE</h2>
+        <p class="menu-detail">Served in a chocolate cup with peanut sauce</p>
+        
+        <h2>PASSION FRUIT PANNA COTTA</h2>
+        <p class="menu-detail">With a blue passion fruit macaroon</p>
+        
+        <h2>SORBET SAMPLER</h2>
+        <p class="menu-detail">Blood orange, raspberry, mango and blackberry</p>
+
+        <h2>FRESH SEASONAL FRUIT PLATTER</h2>
+        <p class="menu-detail">With black rice and ginger buerre blanc</p>
+        
+        <h2>&nbsp;</h2>
+        <p class="menu-price">All desserts above are $9</p>
+
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+    
+		<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<iframe src="location.html" width="276" height="200"></iframe>
+            <h2>Location:</h2>
+            <p>10257 105 Street Edmonton, Alberta T5J 1E3</p>
+            <h2>Phone:</h2>
+            <p><a href="tel:7804214100">780.421.4100</a></p>
+		</div>
+        
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div>
+                
+    </div><!-- #LUNCH DESSERTS -->
+    
+    
+   <!--- ------------------------------------------  DINNER ------------------------------------------ -->
+       <!-- DINNER APPETIZER -->
+    <div data-role="page" id="dinner-app" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false"><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+    
+    <div data-role="content">
+        <h1>Dinner Appetizers</h1>
+        <h2>BOAR BACON WRAPPED SCALLOPS</h2>
+		<p class="menu-detail">Banana cream layered with shortbread cookies Banana chips & caramel</p>
+        <p class="menu-price">Fifteen</p>
+        
+        <h2>BEEF TENDERLOIN TARTAR</h2>
+        <p class="menu-detail">With grilled black bread and balsamic onions</p>
+        <p class="menu-price">Fourteen</p>
+        
+        <h2>GREEN APPLE BABY BACK RIBS</h2>
+        <p class="menu-detail">Served on corn blinis, with a light Jack Daniels glaze & roasted corn</p>
+        <p class="menu-price">Fourteen</p>
+        
+        <h2>GRAPEFRUIT SALMON GRAVLAX</h2>
+        <p class="menu-detail">With crème fraiche and a cucumber sesame salad</p>
+        <p class="menu-price">Thirteen</p>
+        
+        <h2>SPAGHETTI AGLIO OLIO</h2>
+        <p class="menu-detail">Garlic and oil, with chili and basil</p>
+        <p class="menu-price">Eleven</p>
+        
+        <h2>WIENERS AND BEANS</h2>
+        <p class="menu-detail">Toulouse style duck sausage and a white bean cassoulet</p>
+        <p class="menu-price">Fourteen</p>
+
+        <h2>DOVER SOLE</h2>
+        <p class="menu-detail">With a gruyere gougere and pureed chanterelles</p>
+        <p class="menu-price">Seventeen</p>
+        
+        <h2>IBERICO HAM</h2>
+        <p class="menu-detail">The finest ham in the world, from the black hoof pig</p>
+        <p class="menu-price">Thirty-five</p>
+        
+        <h2>OSETRA CAVIAR AND VODKA</h2>
+        <p class="menu-price">Two Hundred</p>
+        
+        <h1>Soup</h1>
+        <h2>SWISS ONION</h2>
+        <p class="menu-price">Seven</p>
+        
+        <h2>SNAPPER AND POTATO</h2>
+        <p class="menu-price">Eight</p>
+        
+        <h1>Salads</h1>
+        <h2>SALAD OF ROMAINE LETTUCE</h2>
+        <p class="menu-detail">Tossed in a creamy garlic egg dressing, soft boiled egg and bacon</p>
+        <p class="menu-price">Ten</p>
+        
+        <h2>GRILLED MARINATED BABY OCTOPUS</h2>
+        <p class="menu-detail">Served with avocado, mesclun greens, balsamic vinegar & extra virgin olive oil</p>
+        <p class="menu-price">Twelve</p>
+        
+        <h2>MIXED SALAD GREENS</h2>
+        <p class="menu-detail">Served with a miso & wasabi dressing, tomato & avocado</p>
+        <p class="menu-price">Eight</p>
+        
+        <h2>PORK BELLY AND BABY BEET</h2>
+        <p class="menu-detail">Served with roasted pear, walnuts and arugula</p>
+        <p class="menu-price">Eleven</p>
+
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+    
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div>
+        
+    </div><!-- #DINNER APPETIZER -->
+    
+    
+    <!-- DINNER MAIN COURSE -->
+    <div data-role="page" id="dinner-main" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false"><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false" rel="external">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+    
+    <div data-role="content">
+        <h1>Dinner Main Course</h1>
+        <h2>MISO GLAZED GIANT PRAWN</h2>
+		<p class="menu-detail">With black rice and ginger buerre blanc</p>
+        <p class="menu-price">Thirty-six</p>
+        
+        <h2>MUSTARD AND HERB CRUSTED LAMB LOIN</h2>
+        <p class="menu-detail">With leek risotto and a pomegranate red wine sauce</p>
+        <p class="menu-price">Thirty-four</p>
+        
+        <h2>HAWAIIAN AHI TUNA LOIN</h2>
+        <p class="menu-detail">Served with ratatouille, pine nuts & balsamic glaze, topped with a roasted garlic bulb</p>
+        <p class="menu-price">Thirty-nine</p>
+        
+        <h2>VENISON TENDERLOIN</h2>
+        <p class="menu-detail">With potato cakes, baby beets, green beans and goat cheese</p>
+        <p class="menu-price">Forty-three</p>
+        
+        <h2>ALBERTA BEEF TENDERLOIN</h2>
+        <p class="menu-detail">Chick pea fries, sautéed mushrooms and Dianne sauce</p>
+        <p class="menu-price">Forty-two</p>
+        
+        <h2>RED CURRIED CHILEAN SEA BASS</h2>
+        <p class="menu-detail">With gingered greens, ricotta dumplings and a light chili oil</p>
+        <p class="menu-price">Forty</p>
+
+        <h2>LOBSTER THERMIDOR</h2>
+        <p class="menu-detail">With green pea ravioli</p>
+        <p class="menu-price">Forty-three</p>
+        
+        <h2>IBERICO PORK CHOP</h2>
+        <p class="menu-detail">Squished grapes, green onion and soy basted</p>
+        <p class="menu-price">Sixty</p>
+        
+
+        <h1>Pasta</h1>
+        <h2>DUCK RAGU</h2>
+        <p class="menu-detail">With butternut squash gnocchi</p>
+        <p class="menu-price">Thirty-six</p>
+        
+        <h2>SPAGHETTI WITH FRESH SEAFOOD</h2>
+        <p class="menu-detail">Prepared with your choice of a light white wine cream sauce or tomato basil sauce</p>
+        <p class="menu-price">Thirty-four</p>
+        
+        <h2>ROASTED ACORN SQUASH RISOTTO</h2>
+        <p class="menu-detail">With fried golden chanterelles</p>
+        <p class="menu-price">Thirty-one</p>
+
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+    
+		<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<iframe src="location.html" width="276" height="200"></iframe>
+            <h2>Location:</h2>
+            <p>10257 105 Street Edmonton, Alberta T5J 1E3</p>
+            <h2>Phone:</h2>
+            <p><a href="tel:7804214100">780.421.4100</a></p>
+		</div>
+        
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div> 
+               
+    </div><!-- #DINNER MAIN COURSE -->
+    
+
+    <!-- DINNER DESSERTS -->
+    <div data-role="page" id="dinner-dess" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false"><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+    
+    <div data-role="content">
+        <h1>Dinner Desserts</h1>
+        <h2>CHOCOLATE AND CAKE</h2>
+		<p class="menu-detail">With pudding and dolce de Leche ice-cream</p>
+        
+        <h2>BANANA, KAHLUA & PECAN BREAD PUDDING</h2>
+        <p class="menu-detail">With leek risotto and a pomegranate red wine sauce</p>
+        
+        <h2>APPLE CARAMEL SOUFFLÉ</h2>
+        <p class="menu-detail">Served with cinnamon ice-cream and baby candy apple</p>
+        
+        <h2>ARNOLD PALMER BRULEE</h2>
+        <p class="menu-detail">Earl Gray tea and fresh lemon</p>
+        
+        <h2>PEANUT BUTTER CHEESECAKE</h2>
+        <p class="menu-detail">Served in a chocolate cup with peanut sauce</p>
+        
+        <h2>PASSION FRUIT PANNA COTTA</h2>
+        <p class="menu-detail">With a blue passion fruit macaroon</p>
+
+        <h2>BANANA SPLIT</h2>
+        <p class="menu-detail">Mango, chocolate and strawberry ice-cream</p>
+        
+        <h2>SORBET SAMPLER</h2>
+        <p class="menu-detail">Blood orange, raspberry, mango and blackberry</p>
+        
+        <h2>FRESH SEASONAL FRUIT PLATTER</h2>
+        <p class="menu-price">All desserts above are $11</p>
+        
+        <h2>TABLESIDE S’MORES FOR TWO</h2>
+        <p class="menu-price">Fourteen</p>
+        
+        <h2>CHEF’S SELECTION OF FOUR DIFFERENT CHEESES</h2>
+        <p class="menu-price">Sixteen</p>
+
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+    
+		<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<iframe src="location.html" width="276" height="200"></iframe>
+            <h2>Location:</h2>
+            <p>10257 105 Street Edmonton, Alberta T5J 1E3</p>
+            <h2>Phone:</h2>
+            <p><a href="tel:7804214100">780.421.4100</a></p>
+		</div>
+        
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div>
+                
+    </div><!-- #DINNER DESSERTS -->
+    
+    <!-- ------------------------------------------  SEASONAL ------------------------------------------ -->
+    <!-- LUNCH ENTREES -->
+    <div data-role="page" id="seasonal-lunch" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false"><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+    
+    <div data-role="content">
+        <h1>SEASONAL LUNCH ENTREES</h1>
+        <h1>$38</h1>
+        <h2>ASSORTED GREENS</h2>
+		<p class="menu-detail">Served with miso & wasabi dressing, tomatoes & avocado</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Swiss onion</p>
+        
+        <h2>BEEF FLANK STEAK</h2>
+        <p class="menu-detail">With potato cakes, baby beets, green beans and goat cheese</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Seared salmon filet with roasted spices, served on couscous & braised spinach, asparagus & tomato butter sauce</p>
+        
+        <h2>CHOCOLATE CAKE</h2>
+		<p class="menu-detail">With pudding and dolce de Leche ice-cream</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>
+        
+        <h1>$43</h1>
+        <h2>ROMAINE</h2>
+		<p class="menu-detail">Tossed in a creamy garlic egg dressing, soft boiled egg and bacon</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Salmon chowder</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Beef satays basted with squished grapes, green onion and soy</p>
+
+        <h2>PAN SEARED HALIBUT</h2>
+		<p class="menu-detail">With a black bean hummus and falafel</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Zurich style schnitzel and rosti potatoes thinly sliced pork with a mushroom cream sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Grilled chicken baked with mozza, eggplant and tomatoes, with spinach and tomato deep risotto ball</p>    
+        
+        <h2>ARNOLD PALMER BRULEE</h2>
+		<p class="menu-detail">Earl Gray tea and fresh lemon</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Peanut butter cheesecake served in a chocolate cup with peanut sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>    
+        
+        
+        <h1>$48</h1>
+        <h2>PORK BELLY AND BABY BEET</h2>
+		<p class="menu-detail">Served with roasted pear, walnuts and arugula</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Swiss onion</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Grapefruit salmon gravlax with crème fraiche and a cucumber sesame salad</p>
+
+        <h2>PAN SEARED HALIBUT</h2>
+		<p class="menu-detail">With a black bean hummus and falafel</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Miso glazed giant prawn with black rice and ginger buerre blanc</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Beef flank steak with potato cakes, baby beets, green beans and goat cheesel</p>    
+        
+        <h2>CHOCOLATE CAKE</h2>
+		<p class="menu-detail">With pudding and dolce de Leche ice-cream</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Passion fruit panna cotta with a blue passion fruit macaroon</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>    
+
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+    
+		<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<iframe src="location.html" width="276" height="200"></iframe>
+            <h2>Location:</h2>
+            <p>10257 105 Street Edmonton, Alberta T5J 1E3</p>
+            <h2>Phone:</h2>
+            <p><a href="tel:7804214100">780.421.4100</a></p>
+		</div> 
+        
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div>  
+         
+    </div><!-- #LUNCH ENTREES -->
+    
+    <!-- DINNER ENTREES -->
+    <div data-role="page" id="seasonal-dinner" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false"><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+    
+    <div data-role="content">
+        <h1>SEASONAL DINNER ENTREES</h1>
+        <h1>$66</h1>
+        <h2>MIXED SALAD GREENS</h2>
+		<p class="menu-detail">Served with miso & wasabi dressing, tomatoes & avocado</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Swiss onion</p>
+        
+        <h2>ALBERTA BEEF TENDERLOIN</h2>
+        <p class="menu-detail">Chick pea fries, sautéed mushrooms and Dianne sauce</p>
+        <p class="menu-detail">Or</p>
+        
+        <h2>PAN SEARED HALIBUT</h2>
+		<p class="menu-detail">With a black bean hummus and falafel</p>
+        
+        <h2>CHOCOLATE CAKE</h2>
+		<p class="menu-detail">With pudding and dolce de Leche ice-cream</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>           
+        
+        <h1>$68</h1>
+        <h2>MIXED SALAD GREENS</h2>
+		<p class="menu-detail">Served with miso & wasabi dressing, tomatoes & avocado</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Butter chicken flatbread with arugula and a chili yoghurt</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Snapper and potato soup</p>        
+
+        <h2>ALBERTA BEEF TENDERLOIN</h2>
+        <p class="menu-detail">Chick pea fries, sautéed mushrooms and Dianne sauce</p>
+        <p class="menu-detail">Or</p>   
+        <p class="menu-detail">Pork chop squished grapes, green onion and soy basted</p>
+        <p class="menu-detail">Or</p> 
+        <p class="menu-detail">Miso glazed giant prawn with black rice and ginger buerre blanc</p>
+        
+        <h2>ARNOLD PALMER BRULEE</h2>
+		<p class="menu-detail">With pudding and dolce de Leche ice-cream</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>    
+        
+        
+        <h1>$73</h1>
+        <h2>BOAR BACON WRAPPED SCALLOPS</h2>
+		<p class="menu-detail">Sea asparagus and oyster mushrooms fried with walnut plum vinaigrette</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Wieners and beans Toulouse style duck sausage and a white bean cassoulet</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Salad of romaine lettuce tossed in a creamy garlic egg dressing, soft boiled egg and bacon</p>
+
+        <h2>ALBERTA BEEF TENDERLOIN</h2>
+		<p class="menu-detail">Chick pea fries, sautéed mushrooms and Dianne sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Red curried Chilean sea bass with gingered greens, ricotta dumplings and a light chili oil</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Mustard and herb crusted lamb loin with leek risotto and a pomegranate red wine sauce</p>    
+        
+        <h2>PEANUT BUTTER CHEESECAKE</h2>
+		<p class="menu-detail">Served in a chocolate cup with peanut sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Banana, Kahlua & pecan bread pudding served with caramel & Kahlua sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>    
+        
+        
+        <h1>$76</h1>
+        <h2>BOAR BACON WRAPPED SCALLOPS</h2>
+		<p class="menu-detail">Sea asparagus and oyster mushrooms fried with walnut plum vinaigrette</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Dover sole with a gruyere gougere and pureed chanterelles</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Pork belly and baby beet served with roasted pear, walnuts and arugula</p>
+
+        <h2>ALBERTA BEEF TENDERLOIN</h2>
+		<p class="menu-detail">Chick pea fries, sautéed mushrooms and Dianne sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Miso glazed giant prawn with black rice and ginger buerre blanc</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Venison tenderloin with potato cakes, baby beets, green beans and goat cheese</p>    
+        
+        <h2>APPLE CARAMEL SOUFFLÉ</h2>
+		<p class="menu-detail">Served with cinnamon ice-cream and baby candy apple</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Chocolate cake with pudding and dolce de Leche ice-cream</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p> 
+        
+        
+        <h1>$108</h1>
+        <h2>DOVER SOLE</h2>
+        <p class="menu-detail">With a gruyere gougere and pureed chanterelles</p>
+
+        <h2>SWISS ONION</h2>    
+        
+        <h2>MIXED SALAD GREENS</h2>
+		<p class="menu-detail">Served with a miso & wasabi dressing, tomato & avocado</p>
+        
+        <h2>IBERICO PORK CHOP</h2>
+		<p class="menu-detail">Squished grapes, green onion and soy bastedo</p>
+        
+        <h2>BANANA, KAHLUA & PECAN BREAD PUDDING</h2>
+		<p class="menu-detail">Served with caramel & Kahlua sauce</p>         
+
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+   
+		<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<iframe src="location.html" width="276" height="200"></iframe>
+            <h2>Location:</h2>
+            <p>10257 105 Street Edmonton, Alberta T5J 1E3</p>
+            <h2>Phone:</h2>
+            <p><a href="tel:7804214100">780.421.4100</a></p>
+		</div>
+        
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div>
+            
+    </div><!-- #DINNER ENTREES -->
+    
+    
+    <!-- ------------------------------------------  H'ORS D'OEUVRES ------------------------------------------ -->
+    <div data-role="page" id="horsd" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false"><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+    
+    <div data-role="content">
+        <h1>H'ORS D'OEUVRES</h1>
+		<p class="menu-detail">When selecting hors d’oeuvres, based on your selections we prepare one piece of each item per person</p>
+        <p class="menu-detail">For Example: if you select #’s 1, 2 & 3 for a party size of 12,</p>
+        <p class="menu-detail">we will prepare 12 pieces of #1, 12 Pieces of #2 and 12 pieces of #3.</p>
+        
+        <h2>&nbsp;</h2>
+        <p class="menu-price">The hors d’oeuvres are priced as follows:</p>
+        
+        <h2>WITHOUT DINNER</h2>
+		<p class="menu-detail">5 pieces for $25, 4 pieces for $20, 3 pieces for $15</p>
+
+        <h2>WITH DINNER</h2>
+		<p class="menu-detail">5 pieces for $15, 4 pieces for $12, 3 pieces for $9</p>
+
+        <h2>SELECT FROM THE FOLLOWING:</h2>
+		<p class="menu-detail">Bacon wrapped scallops</p>
+        <p class="menu-detail">Mini duck tacos</p>
+        <p class="menu-detail">Grilled cheese and tomato soup</p>
+        <p class="menu-detail">Mussels martini</p>
+        <p class="menu-detail">Thai beef satays</p>    
+		<p class="menu-detail">Chicken satays</p>
+        <p class="menu-detail">Mini cheese burgers</p>
+        <p class="menu-detail">Tempura prawns</p>
+        <p class="menu-detail">Salmon with roasted spices</p>
+        <p class="menu-detail">Spicy tuna tartar rolled in cucumber</p>
+		<p class="menu-detail">Steak tartar on Russian rye bread</p>
+        <p class="menu-detail">Smoked salmon in a black squid ink cone</p>
+        <p class="menu-detail">Quail egg and asparagus in a spinach cone with bernaise</p>
+        <p class="menu-detail">Asian beef in a sesame cone</p>
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+    
+		<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<iframe src="location.html" width="276" height="200"></iframe>
+            <h2>Location:</h2>
+            <p>10257 105 Street Edmonton, Alberta T5J 1E3</p>
+            <h2>Phone:</h2>
+            <p><a href="tel:7804214100">780.421.4100</a></p>
+		</div>
+        
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div>
+            
+    </div><!-- #H'ORS D'OEUVRES  -->  
+    
+    
+    <!-- ------------------------------------------  LUNCH ENTREES WINTER 2012 ------------------------------------------ -->
+    <div data-role="page" id="lunch-winter" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false"><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+        
+    <div data-role="content">
+        <h1>LUNCH ENTREES WINTER 2012</h1>
+        <h1>$38</h1>
+        <h2>ASSORTED GREENS</h2>
+		<p class="menu-detail">Served with miso & wasabi dressing, tomatoes & avocado</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Swiss onion</p>
+        
+        <h2>BEEF FLANK STEAK</h2>
+        <p class="menu-detail">With potato cakes, baby beets, green beans and goat cheese</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Seared salmon filet with roasted spices, served on couscous & braised spinach, asparagus & tomato butter sauce</p>
+        
+        <h2>CHOCOLATE CAKE</h2>
+		<p class="menu-detail">With pudding and dolce de Leche ice-cream</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>
+        
+        <h1>$43</h1>
+        <h2>ROMAINE</h2>
+		<p class="menu-detail">Tossed in a creamy garlic egg dressing, soft boiled egg and bacon</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Salmon chowder</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Beef satays basted with squished grapes, green onion and soy</p>
+
+        <h2>PAN SEARED HALIBUT</h2>
+		<p class="menu-detail">With a black bean hummus and falafel</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Zurich style schnitzel and rosti potatoes thinly sliced pork with a mushroom cream sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Grilled chicken baked with mozza, eggplant and tomatoes, with spinach and tomato deep risotto ball</p>    
+        
+        <h2>ARNOLD PALMER BRULEE</h2>
+		<p class="menu-detail">Earl Gray tea and fresh lemon</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Peanut butter cheesecake served in a chocolate cup with peanut sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>    
+        
+        
+        <h1>$48</h1>
+        <h2>PORK BELLY AND BABY BEET</h2>
+		<p class="menu-detail">Served with roasted pear, walnuts and arugula</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Swiss onion</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Grapefruit salmon gravlax with crème fraiche and a cucumber sesame salad</p>
+
+        <h2>PAN SEARED HALIBUT</h2>
+		<p class="menu-detail">With a black bean hummus and falafel</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Miso glazed giant prawn with black rice and ginger buerre blanc</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Beef flank steak with potato cakes, baby beets, green beans and goat cheesel</p>    
+        
+        <h2>CHOCOLATE CAKE</h2>
+		<p class="menu-detail">With pudding and dolce de Leche ice-cream</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Passion fruit panna cotta with a blue passion fruit macaroon</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>    
+
+        <h1>H'ORS D'OEUVRES</h1>
+		<p class="menu-detail">When selecting hors d’oeuvres, based on your selections we prepare one piece of each item per person</p>
+        <p class="menu-detail">For Example: if you select #’s 1, 2 & 3 for a party size of 12,</p>
+        <p class="menu-detail">we will prepare 12 pieces of #1, 12 Pieces of #2 and 12 pieces of #3.</p>
+        
+        <h2>&nbsp;</h2>
+        <p class="menu-price">The hors d’oeuvres are priced as follows:</p>
+        
+        <h2>WITHOUT DINNER</h2>
+		<p class="menu-detail">5 pieces for $25, 4 pieces for $20, 3 pieces for $15</p>
+
+        <h2>WITH DINNER</h2>
+		<p class="menu-detail">5 pieces for $15, 4 pieces for $12, 3 pieces for $9</p>
+
+        <h2>SELECT FROM THE FOLLOWING:</h2>
+		<p class="menu-detail">Bacon wrapped scallops</p>
+        <p class="menu-detail">Mini duck tacos</p>
+        <p class="menu-detail">Grilled cheese and tomato soup</p>
+        <p class="menu-detail">Mussels martini</p>
+        <p class="menu-detail">Thai beef satays</p>    
+		<p class="menu-detail">Chicken satays</p>
+        <p class="menu-detail">Mini cheese burgers</p>
+        <p class="menu-detail">Tempura prawns</p>
+        <p class="menu-detail">Salmon with roasted spices</p>
+        <p class="menu-detail">Spicy tuna tartar rolled in cucumber</p>
+		<p class="menu-detail">Steak tartar on Russian rye bread</p>
+        <p class="menu-detail">Smoked salmon in a black squid ink cone</p>
+        <p class="menu-detail">Quail egg and asparagus in a spinach cone with bernaise</p>
+        <p class="menu-detail">Asian beef in a sesame cone</p>
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+    
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div>        
+
+    
+    </div>
+    <!-- #LUNCH ENTREES WINTER 2012  -->   
+    
+     
+    <!-- ------------------------------------------  DINNER ENTREES WINTER 2012 ------------------------------------------ -->
+    <div data-role="page" id="dinner-winter" class="menuspage">
+    	<div data-role="header">
+			<div id="cfd-homeheader">
+				<h1 class="cfd-logo"><a href="index.html" data-ajax="false"><img src="images/chrlogo.png" alt="Characters Fine Dining" /></a></h1>
+			</div>
+		</div><!-- #cfd-homeheader -->
+
+<!-- POP-UP MENU -->        
+    <div data-role="content">
+        <ul class="chr-topnav">
+            <li class="chr-top-menu"><a href="#popupMenu" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="custom"><img src="images/menu.png" width="31px" alt="menu"></a></li>
+            <li class="chr-top-home"><a href="index.html" data-transition="slide" data-icon="custom" data-ajax="false"><img src="images/home.png" width="26px" alt="home"></a></li>
+        </ul><!-- #chr-topnav -->
+    </div>
+    
+    <div data-role="popup" id="popupMenu" data-theme="b" data-overlay-theme="a" >
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a" class="navi">
+            <!--<li data-role="divider" data-theme="a">Navigation</li>-->
+            <li><a href="menus.html" data-ajax="false">the menus</a></li>
+            <li><a href="bar.html" data-ajax="false">the bar</a></li>
+            <li><a href="rooms.html" data-ajax="false">rooms</a></li>
+            <li><a href="foodgallery.html" data-ajax="false">the gallery</a></li>
+        </ul>
+    </div>
+<!-- # POP-UP MENU -->
+        
+    <div data-role="content">
+        <h1>DINNER ENTREES WINTER 2012</h1>
+        <h1>$66</h1>
+        <h2>MIXED SALAD GREENS</h2>
+		<p class="menu-detail">Served with miso & wasabi dressing, tomatoes & avocado</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Swiss onion</p>
+        
+        <h2>ALBERTA BEEF TENDERLOIN</h2>
+        <p class="menu-detail">Chick pea fries, sautéed mushrooms and Dianne sauce</p>
+        <p class="menu-detail">Or</p>
+        
+        <h2>PAN SEARED HALIBUT</h2>
+		<p class="menu-detail">With a black bean hummus and falafel</p>
+        
+        <h2>CHOCOLATE CAKE</h2>
+		<p class="menu-detail">With pudding and dolce de Leche ice-cream</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>           
+        
+        <h1>$68</h1>
+        <h2>MIXED SALAD GREENS</h2>
+		<p class="menu-detail">Served with miso & wasabi dressing, tomatoes & avocado</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Butter chicken flatbread with arugula and a chili yoghurt</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Snapper and potato soup</p>        
+
+        <h2>ALBERTA BEEF TENDERLOIN</h2>
+        <p class="menu-detail">Chick pea fries, sautéed mushrooms and Dianne sauce</p>
+        <p class="menu-detail">Or</p>   
+        <p class="menu-detail">Pork chop squished grapes, green onion and soy basted</p>
+        <p class="menu-detail">Or</p> 
+        <p class="menu-detail">Miso glazed giant prawn with black rice and ginger buerre blanc</p>
+        
+        <h2>ARNOLD PALMER BRULEE</h2>
+		<p class="menu-detail">With pudding and dolce de Leche ice-cream</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>    
+        
+        
+        <h1>$73</h1>
+        <h2>BOAR BACON WRAPPED SCALLOPS</h2>
+		<p class="menu-detail">Sea asparagus and oyster mushrooms fried with walnut plum vinaigrette</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Wieners and beans Toulouse style duck sausage and a white bean cassoulet</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Salad of romaine lettuce tossed in a creamy garlic egg dressing, soft boiled egg and bacon</p>
+
+        <h2>ALBERTA BEEF TENDERLOIN</h2>
+		<p class="menu-detail">Chick pea fries, sautéed mushrooms and Dianne sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Red curried Chilean sea bass with gingered greens, ricotta dumplings and a light chili oil</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Mustard and herb crusted lamb loin with leek risotto and a pomegranate red wine sauce</p>    
+        
+        <h2>PEANUT BUTTER CHEESECAKE</h2>
+		<p class="menu-detail">Served in a chocolate cup with peanut sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Banana, Kahlua & pecan bread pudding served with caramel & Kahlua sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p>    
+        
+        
+        <h1>$76</h1>
+        <h2>BOAR BACON WRAPPED SCALLOPS</h2>
+		<p class="menu-detail">Sea asparagus and oyster mushrooms fried with walnut plum vinaigrette</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Dover sole with a gruyere gougere and pureed chanterelles</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Pork belly and baby beet served with roasted pear, walnuts and arugula</p>
+
+        <h2>ALBERTA BEEF TENDERLOIN</h2>
+		<p class="menu-detail">Chick pea fries, sautéed mushrooms and Dianne sauce</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Miso glazed giant prawn with black rice and ginger buerre blanc</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Venison tenderloin with potato cakes, baby beets, green beans and goat cheese</p>    
+        
+        <h2>APPLE CARAMEL SOUFFLÉ</h2>
+		<p class="menu-detail">Served with cinnamon ice-cream and baby candy apple</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Chocolate cake with pudding and dolce de Leche ice-cream</p>
+        <p class="menu-detail">Or</p>
+        <p class="menu-detail">Fresh seasonal fruit plate</p> 
+        
+        
+        <h1>$108</h1>
+        <h2>DOVER SOLE</h2>
+        <p class="menu-detail">With a gruyere gougere and pureed chanterelles</p>
+
+        <h2>SWISS ONION</h2>    
+        
+        <h2>MIXED SALAD GREENS</h2>
+		<p class="menu-detail">Served with a miso & wasabi dressing, tomato & avocado</p>
+        
+        <h2>IBERICO PORK CHOP</h2>
+		<p class="menu-detail">Squished grapes, green onion and soy bastedo</p>
+        
+        <h2>BANANA, KAHLUA & PECAN BREAD PUDDING</h2>
+		<p class="menu-detail">Served with caramel & Kahlua sauce</p>         
+
+        <h1>H'ORS D'OEUVRES</h1>
+		<p class="menu-detail">When selecting hors d’oeuvres, based on your selections we prepare one piece of each item per person</p>
+        <p class="menu-detail">For Example: if you select #’s 1, 2 & 3 for a party size of 12,</p>
+        <p class="menu-detail">we will prepare 12 pieces of #1, 12 Pieces of #2 and 12 pieces of #3.</p>
+        
+        <h2>&nbsp;</h2>
+        <p class="menu-price">The hors d’oeuvres are priced as follows:</p>
+        
+        <h2>WITHOUT DINNER</h2>
+		<p class="menu-detail">5 pieces for $25, 4 pieces for $20, 3 pieces for $15</p>
+
+        <h2>WITH DINNER</h2>
+		<p class="menu-detail">5 pieces for $15, 4 pieces for $12, 3 pieces for $9</p>
+
+        <h2>SELECT FROM THE FOLLOWING:</h2>
+		<p class="menu-detail">Bacon wrapped scallops</p>
+        <p class="menu-detail">Mini duck tacos</p>
+        <p class="menu-detail">Grilled cheese and tomato soup</p>
+        <p class="menu-detail">Mussels martini</p>
+        <p class="menu-detail">Thai beef satays</p>    
+		<p class="menu-detail">Chicken satays</p>
+        <p class="menu-detail">Mini cheese burgers</p>
+        <p class="menu-detail">Tempura prawns</p>
+        <p class="menu-detail">Salmon with roasted spices</p>
+        <p class="menu-detail">Spicy tuna tartar rolled in cucumber</p>
+		<p class="menu-detail">Steak tartar on Russian rye bread</p>
+        <p class="menu-detail">Smoked salmon in a black squid ink cone</p>
+        <p class="menu-detail">Quail egg and asparagus in a spinach cone with bernaise</p>
+        <p class="menu-detail">Asian beef in a sesame cone</p>
+    </div>
+    
+    <div data-role="content" class="copyright">
+        <p class="copyright">&copy; 2012 Copyright. Characters Fine Dining Restaurant.</p>
+    </div>
+
+    <div data-role="footer" class="nav-chrmob">
+		<div data-role="navbar" class="nav-chrmob" data-grid="c">
+            <ul>
+                <li><a href="#popupMap" data-rel="popup" data-position-to="window" id="locator" data-icon="custom">Map</a></li>
+                <li><a href="http://www.facebook.com/pages/Characters-Restaurant/149414468402902" id="facebook" data-icon="custom" target="_blank">Facebook</a></li>
+                <li><a href="#signUp" id="email" data-rel="popup" data-position-to="window" data-icon="custom">Sign-up</a></li>
+                <li><a href="http://www.opentable.com/opentables.aspx?t=rest&r=6809&m=27&p=2&d=7/20/2012%207:00:00%20PM&scpref=113" id="opentable" data-icon="custom" target="_blank">OpenTable</a></li>
+            </ul>
+		</div>
+	</div>
+    
+		<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<iframe src="location.html" width="276" height="200"></iframe>
+            <h2>Location:</h2>
+            <p>10257 105 Street Edmonton, Alberta T5J 1E3</p>
+            <h2>Phone:</h2>
+            <p><a href="tel:7804214100">780.421.4100</a></p>
+		</div>
+        
+       <div data-role="popup" id="signUp" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="max-width:280px;">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="subscribe">
+                <p>Subscribe for menu updates and fine dining events.</p>
+    <form action="http://appliedcommunications.createsend.com/t/r/s/jyjidud/" method="post" id="subForm">
+    
+    <label for="jyjidud-jyjidud" class="signupLabel"></label><br /><input type="text" name="cm-jyjidud-jyjidud" id="jyjidud-jyjidud" placeholder="email address" /><br />
+    
+    <input type="submit" value="Subscribe" class="submitButton"/>
+    
+    </form>
+                </div><!-- #subscribe -->
+        </div>        
+
+        
+    </div><!-- #DINNER ENTREES WINTER 2012  -->
+
+	</body>
+	</html>

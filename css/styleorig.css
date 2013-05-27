@@ -1,0 +1,435 @@
+@charset "UTF-8";
+/* Characters Fine Dining CSS Document */
+body {
+	background:#e7dfd8 url(../images/body-bg.jpg) repeat;
+	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+* {
+	padding:0;
+	margin:0;
+}
+
+a {
+	text-decoration:none;
+}
+
+ul {
+	list-style:none;
+}
+
+.limit {
+	width:960px;
+	margin:0 auto;
+}
+h1, h2 , h3, h4, h5 ,h6 {
+	color:#5c3a24;
+	text-transform:uppercase;
+	font-weight:bold;
+}
+h1 {
+	font-size:24px;
+}
+h2 {
+	font-size:18px;
+}
+h3 {
+	font-size:16px;
+}
+p {
+	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* HEADER */
+#header {
+	display:block;
+	position:relative; /*should be absolute */
+	z-index: 10;
+	height:172px;
+	width: 100%;
+	background:url(../images/top-bg.png) repeat-x;
+}
+.top {
+	position: relative;
+	letter-spacing:.1em;
+	text-transform:uppercase;
+	z-index:2000;
+}
+.info-top {
+	font-size: .9em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width:215px;
+}
+.reservations-top {
+	background:url(../images/reserve-top-bg.png) no-repeat;
+	height:68px;
+}
+.reservations-top a {
+	display:block;
+	padding:10px;
+	color:#533725;
+	font-size:15px;
+	/*text-shadow: 0px 0px 2px #000;*/
+	text-align:center;
+	font-weight:bold;
+}
+.reservations-top a:hover {
+	zoom: 1;
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+}
+.telephone-top {
+	display:block;
+	padding:0 10px;
+	color:#fff !important;
+	font-size:26px;
+	text-shadow: 1px 1px 1px #000;
+	text-align:center;
+}
+
+.logo {
+	display:block;
+	position:relative;
+	width:237px;
+	height:112px;
+	margin:0 auto;
+	z-index:1000;
+}
+.menu-container {
+	position: relative;
+	font-size: 16px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding-top:20px;
+	z-index:50;
+	text-shadow: 0px 0px 2px #000;
+}
+ul.menu-left {
+	float:left;
+	margin-top:-21px;
+}
+ul.menu-left li {
+	display:block;
+	float:left;
+	margin:0 3px;
+	position: relative;
+	padding-right:30px;
+	background:url(../images/spacer-left.png) right -2px no-repeat; 
+}
+ul.menu-left li a {
+	color:#fff; 
+}
+ul.menu-left li a:hover {
+	color:#c5c5c5; 
+}
+ul.menu-left li:first-child {
+	margin-left:0;
+}
+ul.menu-left li:last-child {
+	margin-right:0;
+	background:none;
+	padding-right:0;
+}
+
+ul.menu-right {
+	float:right;
+	margin-top:-21px;
+}
+ul.menu-right li {
+	display:block;
+	float:left;
+	margin:0 3px;
+	position: relative;
+	padding-right:30px;
+	background:url(../images/spacer-right.png) right -2px no-repeat; 
+}
+ul.menu-right li a {
+	color:#fff; 
+}
+ul.menu-right li a:hover {
+	color:#c5c5c5; 
+}
+ul.menu-right li:last-child {
+	margin-right:0;
+	background:none;
+	padding-right:0;
+}
+/* SLIDES */
+#slides-container {
+	display:block;
+	position:relative;
+	height:500px;
+	width:100%;
+	margin:0 auto;
+	margin-top: -25px;
+	background:#000 url(../images/slides-bg.jpg) top center no-repeat;
+}
+.slides {
+	height:500px;
+	width:960px;
+	margin:0 auto;
+	background:transparent;
+}
+
+/* MID INFORMATION BAR */
+#mid-container {
+	display:block;
+	position:relative; /*should be absolute */
+	z-index: 10;
+	width: 100%;
+	height: 294px;
+	background: url(../images/features-bg.png) repeat-x;
+	margin-top: -20px;
+}
+
+.mid-box {
+	color:#5c3a24;
+	overflow:hidden;
+}
+
+/* MID CONTENT */
+.mid-content {
+	color:#5c3a24;
+	padding: 50px 0 0;
+}
+.mid-content h1 {
+	font-size:20px;
+	font-weight:500;
+}
+.mid-content p {
+	font-size:14px;
+	font-weight:normal;
+	text-align:justify;
+}
+.mid-content .autograph {
+	float:right;
+	padding: 20px 0 0;
+}
+
+/* FEATURES */
+#features-container {
+	display:block;
+	position:relative; /*should be absolute */
+	z-index: 10;
+	width: 100%;
+	height: 294px;
+	background: url(../images/features-bg.png) repeat-x;
+	margin-top: -20px;
+}
+.features-column {
+	margin:0 60px 0 0;
+	float:left;
+	width:280px;
+	color:#5c3a24;
+	position: relative;
+	font-size:13px;
+	padding: 40px 0 0;
+}
+
+.features-column.last {
+	float:right;
+	margin:0;
+	border-right:0;
+}
+
+.features-column h2 {
+	display: block;
+	text-align:center;
+	font-size:18px;
+	text-transform:uppercase;
+	font-weight:bold;
+	padding: 2px 0;
+}
+
+.features-column p {
+	display:block;
+	text-align:center;
+	font-size:14px;
+	font-weight:500;
+	padding:15px;
+}
+/* CONTACT PAGE */
+.contactleft {
+	margin:20px 0 0;
+	float:left;
+	width:580px;
+	padding:40px 0 0;
+	color:#5c3a24;
+	position: relative;
+}
+.contactleft p {
+	/*text-align:right;*/
+	margin-bottom:20px;
+	font-size:13px;
+}
+.contactright {
+	margin:19px 0 0;
+	float:right;
+	width:292px;
+	position: relative;
+}
+.contactright a:hover {
+	zoom: 1;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+
+.hours {
+	font-size:16px;
+	padding-left:10px;
+}
+/* FOOTER */
+.footer {
+	background:#66C;
+}
+#footer-container {
+	display:block;
+	position:relative;
+	z-index: 10;
+	width: 100%;
+	height: 230px;
+}
+.footer-left {
+	width:auto;
+	float:left;
+}
+
+ul.footer-left-nav {
+	padding-top:8px;
+	display:block;
+	width:auto;
+	height:40px;
+}
+
+ul.footer-left-nav li {
+	display:block;
+	float:left;
+}
+
+ul.footer-left-nav li a {
+	font-size:15px;
+	display:block;
+	padding:0 1em;
+	color:#555453;
+	text-transform:uppercase;
+	line-height: 10px;
+	height: 10px;
+	letter-spacing: .1em;
+	border-left:1px solid #555453;
+	text-shadow: 0px 0px 2px #000;
+}
+ul.footer-left-nav li a:hover {
+	color:#fffefd;
+}
+
+ul.footer-left-nav li:first-child a {
+	padding-left: 0;
+	border-left: none;
+}
+
+ul.social {
+	display:block;
+	height:45px;
+	width:120px;
+	float:left
+}
+
+ul.social li {
+	display:block;
+	float:left;	
+	padding-right:10px;
+}
+
+ul.social li a:hover {
+	zoom: 1;
+	filter: alpha(opacity=40);
+	opacity: 0.4;
+}
+
+.social-copyright {
+	display:block;
+	overflow:hidden;
+}
+.copyright {
+	padding-top:8px;
+	float:left;
+	font-size:12px;
+	color:#555453;
+}
+.footer-left {
+	color:#fff;
+}
+.footer-right {
+	width:245px;
+	float:right;
+}
+
+.footer-right a {
+	display:block;
+	border:0;
+	width:245px;
+	height:125px;
+}
+
+.footer-right a:hover {
+	display:block;
+	border:0;
+	background:url(../images/opentable.png)  0 0 no-repeat;
+}
+
+/*div {background:#CF3;}*/
+
+/* CHARACTERS THE MENUS MODAL STYLES */
+
+.chmenu-container {
+	width:860px;
+	height:1054px;
+	margin:0 auto;
+	background:url(../images/menus-modal-bg.jpg) no-repeat 0 0;
+	text-align:center;
+	padding-top:100px;
+	color:#333;
+}
+ul.chmenu {
+	padding:2px 0 38px 0;
+}
+ul.chmenu li {
+	padding: 15px 0 5px 0;
+}
+.chmenu-container p {
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+	font-style:italic;
+	color:#555;
+	font-size:14px;
+}
+.chmenu-container h1, h2, h3, h4 {
+	color:#555;
+	letter-spacing:1px;
+}
+.chmenu-container h1 {
+	color:#555;
+	font-size:26px;
+}
+.chmenu-container h2 {
+	color:#555;
+	font-size:16px;
+}
+.feature-icon-container {
+	position:relative;
+	width:960px;
+	margin:0 auto;
+	z-index:8000;
+	
+
+}
+
+
+.featureicon {
+	position:absolute;
+	z-index:9000;
+	top:40px;
+	width:232px;
+	left:-60px;
+	
+}

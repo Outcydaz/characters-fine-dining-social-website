@@ -1,0 +1,203 @@
+/*----------------------------------------------------------------------------- 
+
+THE PORTFOLIO CELL SETTINGS
+
+Screen Stylesheet 
+
+version:   	1.0 
+date:      	22.11.11
+author:		themepunch
+email:     	support@themepunch.com 
+website:   	http://www.themepunch.com
+-----------------------------------------------------------------------------*/
+
+
+
+
+/************************************************
+	-	CATEGORY SEELCTION - BUTTON LIGHT	-
+*************************************************/
+.filter {		
+	position:absolute;	
+	margin:0 auto;
+	z-index:1000;
+	bottom:-150px;
+	left:33%;
+}
+
+.fullwidth{
+	margin-left:30px;
+}
+
+.filter-fullwidth{
+	position:absolute;
+	margin-top:-90px;
+	z-index:1000;
+	right:90px !important;
+	
+	
+}
+
+.category{
+	width:auto;
+	height:100px;
+	padding-left:36px;
+	padding-bottom:2px;
+	padding-top:0px;
+	position:relative;	
+	z-index:1100;
+}
+
+.buttonlight:hover span{
+}
+
+.dropdown ul{
+	width:500px;
+	height:100px;
+	z-index:1000;
+	padding-top:0px;
+	line-height: 30px;	
+}
+
+.dropdown ul li{
+	width:124px;
+	height:124px;
+	display:block;
+
+}
+
+.dropdown ul li:first-child{
+	float:left;
+	display:block;
+	width:124px;
+	height:124px;
+	background:url(../../images/gallery/dishes-icon.png);
+}
+
+.dropdown ul li:last-child{
+	float:left;
+	display:block;
+	width:124px;
+	height:124px;
+	background:url(../../images/gallery/space-icon.png);
+}
+
+.dropdown ul li:hover, .dropdown .selected-filter-item{
+	color:#00B4FF;
+}
+
+
+/***************************
+	-	PAGINATION	-
+****************************/	
+.pagination{
+ position:absolute;
+ right:0px;
+ bottom:0px;
+ margin-bottom:-60px;
+}
+
+.pagination .pageofformat{
+	display:none;
+}
+
+.pagination .pages{ 
+ float:left;
+ margin-left:5px;
+ padding-left:10px;
+ padding-right:10px
+}
+
+
+/*************************************************************
+	-	THE BUTTONS LIKE FILTER or PAGINATION BUTTONS	-
+**************************************************************/	
+.buttonlight { 
+ font-family:Arial, sans-serif;
+ font-weight:bold;
+ position:relative;
+ z-index:1100;
+ float: left;
+ height: 30px;
+ line-height: 30px;
+ font-size: 12px; 
+ -webkit-border-radius: 0px;
+ -moz-border-radius: 0px;
+ border-radius: 0px;
+}
+
+.buttonlight:link, .buttonlight:visited, .buttonlight {
+ color: #212121;
+ padding: 0 20px 0 20px;
+ text-align: center;
+ text-shadow: 1px 1px 0px #fff;
+ background: #999 url('../assets/button/btn_light.png') repeat-x center top;
+ border: 0px solid #cdcdcd;
+ text-decoration: none;
+ font-weight: bold;
+ cursor:pointer;
+ position:relative;
+ z-index:1100;
+}
+
+.buttonlight:hover, .comment-reply-link:hover , .buttonlight-selected {
+ color: #fff;
+ text-shadow: 1px 1px 0px #000;
+ background: #212121;
+ border: 0px solid #555555;
+ text-decoration: none;
+}
+
+
+
+/************************************
+	-	THE PRODUCTSGALLERY	 -
+************************************/
+.thumb-rounded {
+	border:1px solid #e6e6e6;	
+}
+
+.cell1x1, .cell1x2, .cell2x1, .cell2x2 {
+	border:1px solid #e6e6e6;	
+	background-color:#fff;		
+	overflow:hidden;
+}
+
+.cell1x1 img, .cell1x2 img, .cell2x1 img, .cell2x2 img{			
+	position:absolute;
+	top:5px;
+	left:5px;
+}
+
+.tp-portfolio .caption {		
+	font-size:12px;
+	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	position:absolute;		
+	padding:8px 15px 8px 15px;
+	background-color:#5c3a24;	
+	text-align:center;
+	color:#fff;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	visibility:hidden;
+}
+
+.tp-portfolio .caption.white {		
+	font-size:12px;
+	font-family:Arial, sans-serif;
+	font-weight: bold;
+	position:absolute;		
+	padding:8px 15px 8px 15px;
+	background-color:#fff;	
+	text-align:center;
+	color:#000;
+	 -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	visibility:hidden;
+}
+
+.tp-portfolio .entry-info{
+	display:none;
+}

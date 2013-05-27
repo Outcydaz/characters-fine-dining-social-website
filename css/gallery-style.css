@@ -1,0 +1,85 @@
+/*----------------------------------------------------------------------------- 
+
+RAMA BASIC STYLES OF HTML DOCUMENT
+
+Screen Stylesheet 
+
+version:   	1.0 
+date:      	07/27/11 
+author:		freshline
+email:     	support@version-four.com 
+website:   	http://www.version-four.com
+-----------------------------------------------------------------------------*/
+
+/***********************
+	-	BASICS 	-
+***********************/
+html {
+	width: 100%;
+	overflow-x:hidden;
+	margin: 0;
+	padding: 0;
+}
+
+body{	
+margin:0px;
+	background:url(../images/gallery/bg/characters-bg.jpg) no-repeat top;
+}
+ol, ul { 
+    list-style: none;
+}
+
+a{
+	text-decoration:none;
+}
+
+
+
+
+
+/*******************
+	-	CONTENT	-	
+*******************/	
+
+.caption-none {
+	display:none;
+}
+
+/* Centered Container for all Content*/
+#content_wrap{
+	width: 100%;
+	margin: 0 auto;
+	min-height:780px;
+	top: -25px;
+	z-index:5;
+	position:relative;
+	background:url(../images/plate-bg-alt.jpg) no-repeat top;
+	padding-bottom: 30px;
+	-webkit-background-size: 2400px 827px;
+	background-size:2400px 827px;
+	
+}
+
+.example-wrapper{
+	position:relative;
+	z-index:4;
+	width:920px;
+	margin:auto;
+	padding-top:30px;
+}
+
+#products{
+	width:920px;
+	height:auto;
+	position:relative;	
+}
+
+h3{
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+	margin-bottom:30px;
+	color: #333;
+	line-height: 25px;
+}
+
